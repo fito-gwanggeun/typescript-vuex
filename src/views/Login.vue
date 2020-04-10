@@ -42,9 +42,11 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import router from "../router/index";
+// import { getToken, getTokenPayload, saveToken } from "../common/token";
 
 @Component
 export default class Login extends Vue {
+  // created() {}
   // data
   email = null;
   pwd = null;
