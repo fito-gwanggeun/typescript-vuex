@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Vuex, { StoreOptions } from "vuex";
 // account 가 필수로 가져야 되는 내용들 정의한 interface
-import { Account, accountType, genderType } from "../common/types/account";
+import { Account } from "../common/types/account";
+import { initAccount } from "../mixins/account";
 
 // eslint-disable-next-line
 const modules: any = {};
@@ -23,17 +24,6 @@ Vue.use(Vuex);
 export interface RootState {
   account: Account;
 }
-
-const initAccount = {
-  idfAccount: 0,
-  country: "empty",
-  email: "empty",
-  name: "empty",
-  gender: genderType.Male,
-  birthday: "1993-03-28",
-  type: accountType.Player,
-  image: "hello"
-};
 
 const store: StoreOptions<RootState> = {
   // RootState : 로그인한 User 의 정보만 담아둔다.
