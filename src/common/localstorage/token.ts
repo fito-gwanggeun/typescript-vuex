@@ -17,7 +17,8 @@ export const getTokenPayload = (token: string) => {
     const payload = jwtDecode(token);
     return payload;
   } catch (err) {
-    return err;
+    console.error(err);
+    return "err";
   }
 };
 
